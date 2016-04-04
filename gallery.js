@@ -1,5 +1,8 @@
 function supports_history_api() {
-  return !!(window.history && history.pushState);
+  if(Modernizr.history)
+    return true;
+  else
+    return false;
 }
 
 function swapPhoto(href) {
